@@ -3,7 +3,7 @@
 /*==========================================================*/
 @font-face {
     font-family: 'copperplate-gothic-light';
-    src: url(../fonts/copperplate-gothic-light.ttf) format('truetype');
+    src: url('../fonts/copperplate-gothic-light.ttf') format('truetype');
 }
 
 @font-face {
@@ -502,6 +502,12 @@ label {
     transform: translateY(-50%);
 }
 
+.sign-main-block.sign-center {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
 .sign-main-block>.row {
     margin: 0;
     height: 100%;
@@ -527,6 +533,10 @@ label {
     font-size: 15px;
 }
 
+.sign-side-block .form-control {
+    border: 1px solid transparent;
+}
+
 .btn-signin {
     border-radius: 0;
     color: #fff;
@@ -544,6 +554,15 @@ label {
     font-size: 16px;
     position: relative;
     padding: 2px;
+}
+
+.btn-google:hover,
+.btn-google:focus,
+.btn-signin:hover,
+.btn-signin:focus {
+    color: #fff;
+    opacity: 0.8;
+    transition: all 0.6s ease;
 }
 
 .btn-google:after,
@@ -594,6 +613,30 @@ label {
 
 .register-link {
     font-weight: 700;
+}
+
+.form-control.error {
+    border: 1px solid #05cc47;
+}
+
+label.error {
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+    color: #05cc47;
+}
+
+@media (max-width: 600px) {
+    .sign-main-block {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        left: 0;
+    }
+    .sign-side-block {
+        padding: 35px 10px;
+    }
 }
 
 /*===================== Login Section Ends here  ======================*/
