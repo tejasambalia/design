@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Coming Soon</title>
+    <title>Board</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Proza+Libre:400,400i,500,500i" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iptools-jquery-offcanvas.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,42 +26,72 @@
   </head>
   <body>
 
-    <section class="coming_soon">
-        <div class="view_table">
-            <div class="view_cell">  
-                <h3 class="coming_title"> we launching soon </h3>      
-                <p class="coming_in">
-                	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin bibendum mollis. Nullam pretium ipsum scelerisque, vehicula urna vitae, elementum metus.
-                </p>
-                <ul id="coming_soon" class="list-inline timer_box">
-                  <li><span class="days">00</span><p class="days_text">Days</p></li>
-                    <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
-                    <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
-                    <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
-                </ul>  
-                <form class="mailchimp_form">
-                    <div class="form-group">
-                        <input type="email" name="mail_add" class="form-control" placeholder="Enter Email Address" required="true">
-                        <button type="submit" class="btn"> get notified! </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+  	<aside id="my-navigation" class="offcanvas">
+  		<nav>
+  			<div class="navigation">
+  				<button data-offcanvas-close="my-navigation" class="btn close-btn"><i class="ion-ios-arrow-thin-left"></i> Menu</button>
+  				<div class="my-profile">
+  					<div class="profile-icon">
+  						
+  					</div>
+  					<div class="profile-details"></div>
+  				</div>
+  				<div class="nav-links">
+  					<ul class="list-unstyled">
+  						<li><a href="#"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
+  						<li><a href="#"> board </a></li>
+  						<li><a href="#"> trending now </a></li>
+  						<li><a href="#"> categories </a></li>
+  						<li><a href="#"> history </a></li>
+  						<li><a href="#"> subscriptions </a></li>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+  	</aside>
+
+	
+
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<button data-offcanvas-open="my-navigation" class="btn open-btn"><i class="ion-navicon"></i></button>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="main-logo">
+						<a href="#"><img src="img/Logo-1-white.png" class="img-responsive center-block" height="50"></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="dropdown top-profile">
+						<a href="#" data-toggle="dropdown" class="profile-img">
+							<img src="img/PicsArt_11-14-12.30.45.jpg" class="img-responsive center-block">
+						</a>
+						<div class="dropdown-menu">
+							<ul class="list-unstyled">
+								<li><a href="#">logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>
-
+    <script type="text/javascript" src="js/iptools-jquery-offcanvas.js"></script>
     <script type="text/javascript">
-        $('#coming_soon').countdown({
-            date: '8/06/2017 23:59:59',
-            days: 'Days'
-        }, function () {
-            alert('Done!');
-        });
+    	$(document).ready(function () {
+	        $('#my-navigation').iptOffCanvas({
+	            baseClass: 'offcanvas',
+	            type: 'left', // top, right, bottom, left.,
+	            closeOnClickOutside: true
+	        });
+	    });
     </script>
   </body>
 </html>
